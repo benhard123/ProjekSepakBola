@@ -1,5 +1,8 @@
 import cv2
 import numpy as np
+import serial
+
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
 colorLower = (-2, 100, 100) 
 colorUpper = (18, 255, 255) 
@@ -21,6 +24,7 @@ while True:
     center = None
 
     if len(cnts) > 0: 
+        ser.write(b'1')
  		# find the largest contour in the mask, then use 
  		# it to compute the minimum enclosing circle and 
  		# centroid 
