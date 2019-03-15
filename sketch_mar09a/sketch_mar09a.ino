@@ -1,16 +1,21 @@
-int hasil=0;
+char hasil=0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   if (Serial.available() > 0){
     hasil = Serial.read();
-    digitalWrite(7, HIGH);
-    delay(1000);
+    Serial.write(hasil);
+    if(hasil == 'f'){
+      digitalWrite(7,HIGH);
+    }
+    else if(hasil == 'a'){
+      digitalWrite(7,LOW);
+    }
   }
-  digitalWrite(7, LOW);
 }
