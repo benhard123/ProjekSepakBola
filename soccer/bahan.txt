@@ -1,0 +1,3 @@
+webcam, jumper banyak, arduino 1, driver motor 2, solenoid, raspi,
+
+driver motor, solenoid, jumper, webcam, led, batre, 
